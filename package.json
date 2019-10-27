@@ -1,0 +1,32 @@
+{
+  "name": "shelljsbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedevxen/shelljsbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedevxen/shelljsbot/issues"
+  },
+  "homepage": "https://github.com/thedevxen/shelljsbot#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "lowdb": "^1.0.0",
+    "shelljs": "^0.8.3",
+    "telegraf": "^3.32.0"
+  }
+}
