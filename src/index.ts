@@ -4,7 +4,7 @@ import bot from "./bot";
 
 // Midlleware
 bot.use(async (ctx, next) => {
-  if (ctx.from.id !== parseInt(ADMIN_ID)) {
+  if (ADMIN_ID.split(",").indexOf(ctx.from.id.toString()) < 0) {
     ctx.reply(`❌ You are not authorized to use this bot.`);
   } else {
     next();
