@@ -9,11 +9,16 @@ const ExecWizard = new WizardScene(
     ctx.wizard.next();
   },
   async ctx => {
+    const command = ctx.message.text;
+    if (command === "exit") {
+      ctx.scene.leave();
+      ctx.reply(`Session closed.`);
+      return;
+    }
     bot.telegram.sendChatAction(ctx.chat.id, "typing");
     if (ctx.session.w_dir) {
       shell.cd(ctx.session.w_dir);
     }
-    const command = ctx.message.text;
     const w_dir = command.match(/^cd (.*)$/);
     w_dir ? shell.cd(w_dir[1]) : null;
     const output = shell.exec(command, {
